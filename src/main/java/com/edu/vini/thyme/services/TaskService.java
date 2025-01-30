@@ -5,16 +5,22 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.edu.vini.thyme.model.Task;
+
 @Service
 public class TaskService {
-    private List<String> tasks = new ArrayList<>();
+    private List<Task> tasks = new ArrayList<>();
 
-    public List<String> getTasks() {
+    public List<Task> getTasks() {
         return tasks;
     }
 
-    public void addTask(String task) {
+    public void addTask(Task task) {
         tasks.add(task);
+    }
+
+    public void deleteTask(Long id) {
+        tasks.removeIf(task -> task.getId().equals(id));
     }
 
     public void clearTasks() {
