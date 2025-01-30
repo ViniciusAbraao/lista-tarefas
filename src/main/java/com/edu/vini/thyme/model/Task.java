@@ -17,6 +17,7 @@ public class Task {
     }
 
     private Long id;
+
     private String name;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
